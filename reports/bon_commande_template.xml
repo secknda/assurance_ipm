@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="print_bon_order">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page" style="margin-top:100px; font-size: 20px;">
+                            <!-- Header -->
+                            <div style="margin-bottom:50px;">
+                                <h1 class="text-center">Bon de Commande </h1>
+                                <div style="float:right;">
+                                    <p>Numéro d'assurance: <span t-field="o.name"/></p>
+                                    <p>Date de début : </p>
+                                </div>
+                                <div style="float:left;">
+                                    <p >Employé : <span t-field="o.partner_id.name"/></p>
+                                    <p>Adresse : <span t-field="o.partner_id.street"/> <span t-field="o.partner_id.city"/></p>
+                                </div>
+                                
+                            </div>
+                            <br/><p></p><br/><p></p>
+                            <!-- Tableau des lignes de commande -->
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Référence</th>
+                                        <th>Description</th>
+                                        <th>Quantité</th>
+                                        <th>Prix unitaire</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--<tr t-foreach="o.hopital" t-as="line">-->
+                                    <tr >
+                                        <td>.......</td>
+                                        <td>........</td>
+                                        <td>.......</td>
+                                        <td>........... cfa</td>
+                                        <td>............ cfa</td>
+                                        <!-- 
+                                            <td><span t-field="line.product_id.default_code"/></td>
+                                        <td><span t-field="line.name"/></td>
+                                        <td><span t-field="line.product_uom_qty"/> <span t-field="line.product_uom.name"/></td>
+                                        <td><span t-field="line.price_unit"/> €</td>
+                                        <td><span t-field="line.price_subtotal"/> €</td>
+                                        -->
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Footer - Total de la commande -->
+                            <div class="text-right">
+                                <p>Total de la commande : <span t-field="o.amount"/> €</p>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
+<!-- 
+    <?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="print_bon_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                    <br/>
+                        <p></p>
+                        <br/>
+                        <p></p>
+                        <br/>
+                        <p></p>
+                        <h2>Bon de Commande</h2>
+                        
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+ -->

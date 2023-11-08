@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    
+    <record id="paperformat_letter_garanted" model="report.paperformat">
+        <field name="name">Custom Paperformat for the garanted letter</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">5</field>
+        <field name="dpi">96</field>
+    </record>
+    <record id="paperformat_bon_garanted" model="report.paperformat">
+        <field name="name">Custom Paperformat for the garanted letter</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">210</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">10</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">15</field>
+        <field name="margin_right">15</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">5</field>
+        <field name="dpi">96</field>
+    </record>
+<!--
+    <record id="paperformat_frenchcheck" model="report.paperformat">
+        <field name="name">French Bank Check</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">80</field>
+        <field name="page_width">100</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">3</field>
+        <field name="margin_bottom">3</field>
+        <field name="margin_left">3</field>
+        <field name="margin_right">3</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">3</field>
+        <field name="dpi">80</field>
+        
+        <field name="disable_shrinking">True</field>
+    </record>
+-->
+    
+       <!-- Rapport de Lettre -->
+    <record id="hr_employee_print_letter" model="ir.actions.report">
+        <field name="name">Lettre de garantie</field>
+        <field name="model">insurance.details</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">assurance_ipm.print_letter_garanted</field>
+        <field name="report_file">assurance_ipm.print_letter_garanted</field>
+        <field name="print_report_name">'Print Letter - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_insurance_details"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_letter_garanted"/>
+    </record>
+    <!-- Rapport de Bon garantie -->
+    <record id="hr_employee_print_order" model="ir.actions.report">
+        <field name="name">Bon de Commande</field>
+        <field name="model">insurance.details</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">assurance_ipm.print_bon_order</field>
+        <field name="report_file">assurance_ipm.print_bon_order</field>
+        <field name="print_report_name">'Print Order - %s' % (object.name).replace('/', '')</field>
+        <field name="binding_model_id" ref="model_insurance_details"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="paperformat_bon_garanted"/>
+    </record>
+
+</odoo>

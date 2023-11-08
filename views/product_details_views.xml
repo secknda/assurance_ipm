@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_order_view_form" model="ir.ui.view">
+        <field name="name">product.order.view.form</field>
+        <field name="model">product.order</field>
+        <field name="arch" type="xml">
+            <form string="product order Form">
+                <sheet> <group>
+                        <group>
+                            <field name="quantity"/>
+                            <field name="designation"/>
+                        </group>
+                        <group>
+                            <field name="prix_unitaire"/>
+                            <field name="prix_total"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_order_view_tree" model="ir.ui.view">
+        <field name="name">product.order.view.tree</field>
+        <field name="model">product.order</field>
+        <field name="arch" type="xml">
+            <tree string="product order Tree">
+                <field name="quantity"/>
+                <field name="designation"/>
+                <field name="prix_unitaire"/>
+                <field name="prix_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_order_action" model="ir.actions.act_window">
+        <field name="name">order</field>
+        <field name="res_model">product.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You haven't created any order yet.
+            </p>
+        </field>
+    </record>
+
+</odoo>

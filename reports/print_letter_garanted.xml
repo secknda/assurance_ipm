@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <template id="print_letter_garanted">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        
+                        <div style="font-family: Arial, sans-serif;  ">
+                        <br/>
+                        <p></p>
+                        <br/>
+                        <p></p>
+                        <br/>
+                        <p></p>
+                                <div style="font-size: 16px; ">
+                                    <t t-esc="o.partner_id.name"/>
+                                    <br/>
+                                    <t t-esc="o.partner_id.phone"/>
+                                    <br/>
+                                    Numéro de Police : <t t-esc="o.policy_number"/>
+                                    <br/>
+                                    Date de la couverture : <t t-esc="o.start_date"/>
+                                    <br/>
+                                    Date de fin de la couverture : <t t-esc="o.close_date"/>
+                                    <br/>
+                                    Montant de la garantie : <t t-esc="o.amount"/>
+                                </div><br/>
+                        </div>
+                        <br/>
+                        <p style="font-family: Arial, sans-serif;">
+                            Objet : Lettre de garantie pour l'assurance médicale
+                        </p>
+                        
+                        <p style="font-size: 16px;">
+                            Madame, Monsieur,
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            Je, soussigné(e) <strong><t t-esc="o.partner_id.name"/></strong>, titulaire de la police d'assurance numéro <strong><t t-esc="o.policy_number"/></strong>, 
+                            émise par votre compagnie d'assurance, confirme par la présente que cette police d'assurance est en vigueur et que toutes les primes ont été payées conformément aux termes du contrat.
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            La présente lettre de garantie atteste que la couverture d'assurance est en place pour tous soins médicaux.
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            Cette lettre de garantie est valable du <strong><t t-esc="o.start_date"/></strong> au <strong><t t-esc="o.close_date"/></strong>.
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            En cas de réclamation couverte par cette garantie, je m'engage à informer immédiatement la compagnie d'assurance et à suivre les procédures de réclamation établies.
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            Je reste à votre disposition pour fournir toute information ou documentation supplémentaire si nécessaire.
+                        </p>
+                        <p style="font-size: 16px; text-align: justify;">
+                            Veuillez trouver ci-joint une copie de ma police d'assurance pour référence.
+                        </p>
+                        <br/>
+                        <p style="font-size: 16px; text-align: right;">
+                            Cordialement,
+                        </p>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

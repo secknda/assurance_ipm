@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="order_details_view_form" model="ir.ui.view">
+        <field name="name">order.details.view.form</field>
+        <field name="model">order.details</field>
+        <field name="arch" type="xml">
+            <form string="OrderPolicy Details Form">
+                <sheet>
+                    
+                    <group>
+                        <group>
+                            <field name="insurance_id"/>
+                            <field name="participant"/>
+                        </group>
+                        <group>
+                            <field name="Ordonnance"/>
+                            <field name="beneficiaire"/>
+                        </group>
+                        <group>
+                            <field name="commission"/>
+                            <field name="police"/>
+                        </group>
+                        
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Commande" name="general_info">
+                        
+                            <group>
+                                <field name="product"/>
+                            </group>
+                            
+                        </page>
+                        
+                        </notebook>
+                        
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="order_details_view_tree" model="ir.ui.view">
+        <field name="name">order.details.view.tree</field>
+        <field name="model">order.details</field>
+        <field name="arch" type="xml">
+            <tree string="order Details Tree">
+                <field name="participant"/>
+                <field name="beneficiaire"/>
+                <field name="Ordonnance"/>
+                <field name="beneficiaire"/>
+                <field name="commission"/>
+                <field name="police"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="order_details_action" model="ir.actions.act_window">
+        <field name="name">Bon de Commande</field>
+        <field name="res_model">order.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You haven't created any order yet.
+            </p>
+        </field>
+    </record>
+
+</odoo>

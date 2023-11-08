@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+
+
+{
+    'name': 'Assurance IPM',
+    'version': '16.0.1.1.1',
+    'summary': """Insurance Management & Operations""",
+    'description': """Insurance Management""",
+    'author': 'Masco Solutions',
+    'company': 'Masco Solutions',
+    'website': 'https://www.mas.sn',
+    'category': 'Industries',
+    'depends': ['account', 'base'],
+    'license': 'AGPL-3',
+    'data': [
+        'security/ir.model.access.csv',
+        'data/insurance_management_data.xml',
+        'views/claim_details_views.xml',
+        'views/employee_details_views.xml',
+        'views/insurance_details_views.xml',
+        'views/policy_details_views.xml',
+        'views/insurance_management_menus.xml',
+        'views/hopital_details_view.xml',
+        'views/clinique_details_views.xml',
+        'views/praticien_details_views.xml',
+        'views/opticien_details_views.xml',
+        'views/ayant_droit_views.xml',
+        'views/charge_details_views.xml',
+        'views/commande_details_views.xml',
+        'views/product_details_views.xml',
+        'views/pharmacie_details_views.xml',
+        'reports/print_letter_garanted.xml',
+        'reports/garanted_letter.xml',
+        #'reports/lettre_garantie_template.xml',
+        'reports/bon_commande_template.xml',
+        
+    ],
+    'images': ['static/description/banner.png'],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

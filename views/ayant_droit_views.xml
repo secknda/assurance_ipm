@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="famille_details_view_form" model="ir.ui.view">
+        <field name="name">famille.details.view.form</field>
+        <field name="model">famille.details</field>
+        <field name="arch" type="xml">
+            <form string="Policy Details Form">
+                <sheet>
+                    
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="prenom" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="image" widget="image" style="float:right; width=50px;" nolabel="1"/>
+                        </group>
+                        <group>
+                            
+                            <field name="sexe"/>
+                            <field name="date_naissance"/>
+                            <field name="lieu_naissance"/>
+                        </group>
+                        <group>
+                            <field name="adresse"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="ville"/>
+                        </group>
+                        <group>
+                            <field name="num_security"/>
+                            <field name="lien"/>
+                        </group>
+                        <group>
+                        <field name="bulletin" filename="nom_fichier_joint" widget="attach_file" string=""/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes internes">
+                            <field name="note_field"/>
+                        </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="famille_details_view_tree" model="ir.ui.view">
+        <field name="name">famille.details.view.tree</field>
+        <field name="model">famille.details</field>
+        <field name="arch" type="xml">
+            <tree string="famille Details Tree">
+                <field name="name"/>
+                <field name="date_naissance"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="lien"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="famille_details_action" model="ir.actions.act_window">
+        <field name="name">Ayant_droit</field>
+        <field name="res_model">famille.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                You haven't created any famille yet.
+            </p>
+        </field>
+    </record>
+
+</odoo>
